@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal - Dashboard</title>
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Bar (Header) -->
+    <header class="top-bar">
+        <div class="user-info">
+            <div class="avatar">
+                <button ><a href="../HTML/perfil.html"><i class="fas fa-user"></i></a></button>
+
+            </div>
+            <div class="greeting">
+                <h2>Olá, gerente!</h2>
+                <span class="unit-id">ID: 54546565 Alimentar Triangulo Mineiro</span>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar no sistema..." class="search-input" id="globalSearchInput">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="top-actions">
+            <button class="action-icon-btn">
+                <i class="fas fa-cog"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Layout (Two Columns) -->
+    <div class="main-layout">
+        <!-- Coluna Esquerda (Sidebar de Métricas) -->
+        <aside class="sidebar-metrics">
+            <!-- Total de Feedbacks -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <div class="metric-icon"><i class="fas fa-comments"></i></div>
+                    <div class="metric-title">Total de Feedbacks</div>
+                </div>
+                <div class="metric-value">367</div>
+                <div class="metric-trend trend-up"><i class="fas fa-arrow-up"></i> 12% vs mês anterior</div>
+            </div>
+
+            <!-- Resolvidos -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <div class="metric-icon" style="background-color: #dcfce7; color: #15803d;"><i class="fas fa-check-circle"></i></div>
+                    <div class="metric-title">Resolvidos</div>
+                </div>
+                <div class="metric-value">34</div>
+                <div class="metric-trend trend-up"><i class="fas fa-arrow-up"></i> 5% vs mês anterior</div>
+            </div>
+
+            <!-- Pendentes -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <div class="metric-icon" style="background-color: #fffbeb; color: #f59e0b;"><i class="fas fa-clock"></i></div>
+                    <div class="metric-title">Pendentes</div>
+                </div>
+                <div class="metric-value">78</div>
+                <div class="metric-trend trend-down"><i class="fas fa-arrow-down"></i> 6,5% vs mês anterior</div>
+            </div>
+        </aside>
+
+        <!-- Coluna Direita (Conteúdo Principal) -->
+        <main class="main-content">
+            <!-- Grade de Navegação -->
+            <section class="nav-grid">
+                <a href="setores.html" class="nav-card" datapage="../HTML/setores.html">
+                    <i class="fas fa-th-large nav-card-icon"></i>
+                    <span class="nav-card-title">Setores</span>
+                </a>
+                <a href="relatorio.html" class="nav-card" datapage="../HTML/relatorio.html">
+                    <i class="fas fa-clipboard-list nav-card-icon"></i>
+                    <span class="nav-card-title">Relatório</span>
+                </a>
+                <a href="produtos.html" class="nav-card" datapage="../HTML/produtos.html">
+                    <i class="fas fa-box-open nav-card-icon"></i>
+                    <span class="nav-card-title">Produtos</span>
+                </a>
+                <a href="respondentes.html" class="nav-card" datapage="../HTML/respondentes.html">
+                    <i class="fas fa-users nav-card-icon"></i>
+                    <span class="nav-card-title">Respondentes</span>
+                </a>
+            </section>
+
+            <!-- Feedbacks Recentes -->
+            <section class="recent-feedbacks">
+                <div class="section-header">
+                    <h2 class="section-title">Feedbacks Recentes</h2>
+                    <a href="respondentes.html" class="view-all-link">Ver todos os feedbacks <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div id="recentFeedbacksList">
+                    <!-- Exemplo de item de feedback -->
+                    <div class="feedback-item">
+                        <div class="avatar-small">MF</div>
+                        <div class="feedback-content">
+                            <div class="feedback-meta">
+                                <span class="respondent-name">Marcela Fernandes</span>
+                                <span class="feedback-timestamp">Hoje, 10:49</span>
+                            </div>
+                            <p class="feedback-text-preview">O fardo de leite condensado veio com alguns furinhos...</p>
+                            <div class="feedback-tags-actions">
+                                <div class="tags-group">
+                                    <span class="tag tag-quality">QUALIDADE</span>
+                                    <span class="tag tag-product">LEITE CONDENSADO</span>
+                                </div>
+                                <div class="feedback-actions-mini">
+                                    <button class="action-btn-mini"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn-mini"><i class="fas fa-check"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="avatar-small">SC</div>
+                        <div class="feedback-content">
+                            <div class="feedback-meta">
+                                <span class="respondent-name">Soso Careca</span>
+                                <span class="feedback-timestamp">Hoje, 14:29</span>
+                            </div>
+                            <p class="feedback-text-preview">O doce de leite é muito doce e muito líquido.....</p>
+                            <div class="feedback-tags-actions">
+                                <div class="tags-group">
+                                    <span class="tag tag-commercial">COMERCIAL</span>
+                                    <span class="tag tag-product">DOCE DE LEITE</span>
+                                </div>
+                                <div class="feedback-actions-mini">
+                                    <button class="action-btn-mini"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn-mini"><i class="fas fa-check"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="avatar-small">KF</div>
+                        <div class="feedback-content">
+                            <div class="feedback-meta">
+                                <span class="respondent-name">Kaio Ferreira</span>
+                                <span class="feedback-timestamp">Ontem, 23:24</span>
+                            </div>
+                            <p class="feedback-text-preview">Tive um excelente atendimento, eficaz na hora...</p>
+                            <div class="feedback-tags-actions">
+                                <div class="tags-group">
+                                    <span class="tag tag-service">ATENDIMENTO</span>
+                                </div>
+                                <div class="feedback-actions-mini">
+                                    <button class="action-btn-mini"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn-mini"><i class="fas fa-check"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="avatar-small">AB</div>
+                        <div class="feedback-content">
+                            <div class="feedback-meta">
+                                <span class="respondent-name">Antonella Braga</span>
+                                <span class="feedback-timestamp">Hoje, 10:49</span>
+                            </div>
+                            <p class="feedback-text-preview">O doce da goiabada não é tão doce quanto meu pirulito...</p>
+                            <div class="feedback-tags-actions">
+                                <div class="tags-group">
+                                    <span class="tag tag-removed">RETIRADA</span>
+                                    <span class="tag tag-product">GOIABADA</span>
+                                </div>
+                                <div class="feedback-actions-mini">
+                                    <button class="action-btn-mini"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn-mini"><i class="fas fa-check"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../JS/menu.js"></script>
+</body>
+</html>

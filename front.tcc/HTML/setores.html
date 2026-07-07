@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setores - Dashboard de Performance</title>
+    <link rel="stylesheet" href="../CSS/setores.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header-container">
+        <div class="header-left">
+            <button type="button" id="back-button" class="back-button" aria-label="Voltar">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                <span class="sr-only">Voltar</span>
+            </button>
+            <div class="title-section">
+                <nav class="breadcrumb">Home / Setores</nav>
+                <h1><i class="fas fa-layer-group"></i> Setores</h1>
+            </div>
+        </div>
+        <div class="actions-group">
+            <button class="btn btn-secondary" id="btnFilter">
+                <i class="fas fa-calendar-alt"></i> Filtrar Período
+            </button>
+            <button class="btn btn-primary" id="btnExport">
+                <i class="fas fa-download"></i> Exportar
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Sidebar KPIs -->
+        <aside class="sidebar">
+            <!-- Rendimento -->
+            <div class="card kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div>
+                        <div class="kpi-title">Rendimento</div>
+                    </div>
+                </div>
+                <div class="gauge-container">
+                    <div class="gauge">
+                        <span class="gauge-text">71%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Satisfação Média -->
+            <div class="card kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div>
+                        <div class="kpi-title">Satisfação Média</div>
+                    </div>
+                </div>
+                <div class="kpi-value">88%</div>
+                <div class="kpi-trend">
+                    <span class="trend-up"><i class="fas fa-arrow-up"></i> 12% vs mês anterior</span>
+                </div>
+            </div>
+
+            <!-- Atendimento -->
+            <div class="card kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <div class="kpi-title">Atendimento (mês atual)</div>
+                    </div>
+                </div>
+                <div class="kpi-value">519</div>
+                <div class="kpi-trend">
+                    <span class="trend-up"><i class="fas fa-arrow-up"></i> 35% vs mês anterior</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Gráfico de Barras -->
+            <section class="chart-container">
+                <h2 class="section-title">Satisfação por Setor</h2>
+                <div class="bar-chart">
+                    <div class="bar-wrapper">
+                        <div class="bar" style="height: 60%;"></div>
+                        <span class="bar-label">Vendas</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar" style="height: 80%;"></div>
+                        <span class="bar-label">Financeiro</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar" style="height: 30%;"></div>
+                        <span class="bar-label">Produção</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar" style="height: 85%;"></div>
+                        <span class="bar-label">Marketing</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabela de Setores -->
+            <section class="table-container">
+                <h2 class="section-title">Avaliação de Setores</h2>
+                <table id="setoresTable">
+                    <thead>
+                        <tr>
+                            <th>SETOR</th>
+                            <th>AVALIAÇÃO</th>
+                            <th>TENDÊNCIA</th>
+                            <th style="text-align: right;">AÇÕES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sector-name">Vendas</td>
+                            <td class="rating">5/5 <span class="status-icon status-up"><i class="fas fa-star"></i></span></td>
+                            <td><i class="fas fa-arrow-up status-up"></i> Excelente</td>
+                            <td style="text-align: right;">
+                                <button class="btn-action view-details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sector-name">Financeiro</td>
+                            <td class="rating">4/5 <span class="status-icon status-up"><i class="fas fa-star"></i></span></td>
+                            <td><i class="fas fa-arrow-up status-up"></i> Bom</td>
+                            <td style="text-align: right;">
+                                <button class="btn-action view-details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sector-name">Produção</td>
+                            <td class="rating">2/5 <span class="status-icon status-down"><i class="fas fa-arrow-down"></i></span></td>
+                            <td><i class="fas fa-arrow-down status-down"></i> Crítico</td>
+                            <td style="text-align: right;">
+                                <button class="btn-action view-details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sector-name">Marketing</td>
+                            <td class="rating">4/5 <span class="status-icon status-up"><i class="fas fa-star"></i></span></td>
+                            <td><i class="fas fa-arrow-up status-up"></i> Bom</td>
+                            <td style="text-align: right;">
+                                <button class="btn-action view-details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Gráfico de Rosca -->
+            <section class="donut-container">
+                <div>
+                    <h2 class="section-title">Distribuição de Atendimento</h2>
+                    <div class="donut-chart"></div>
+                </div>
+                <div class="donut-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #002855;"></div>
+                        <span>Comercial: 33%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #3b82f6;"></div>
+                        <span>Entrega: 15,1%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #1e293b;"></div>
+                        <span>Qualidade: 29,7%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #64748b;"></div>
+                        <span>Atendimento: 22,2%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Summary -->
+            <div class="footer-summary">
+                <div class="summary-item">
+                    <h3>Melhor Setor</h3>
+                    <p><i class="fas fa-trophy"></i> Vendas e Comercial</p>
+                </div>
+                <div class="summary-item">
+                    <h3>Pior Setor</h3>
+                    <p><i class="fas fa-exclamation-circle"></i> Produção e Entrega</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../JS/setores.js"></script>
+</body>
+</html>
